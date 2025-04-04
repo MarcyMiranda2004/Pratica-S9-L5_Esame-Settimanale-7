@@ -1,0 +1,32 @@
+@import url(./style.css);
+
+.footer-icon {
+  font-size: 1.5rem;
+  color: var(--netflix-white);
+}
+
+.footer-links a {
+  color: var(--netflix-white);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-button {
+  background-color: var(--netflix-black);
+  border: 1px solid var(--netflix-red);
+  color: var(--netflix-white);
+}
+
+.footer-button:hover {
+  background-color: var(--netflix-red);
+  color: var(--netflix-white);
+}
+
+.copyright {
+  text-align: center;
+  color: var(--netflix-white);
+  font-size: 0.875rem;
+}

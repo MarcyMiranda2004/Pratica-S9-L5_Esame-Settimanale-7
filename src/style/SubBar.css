@@ -1,0 +1,6 @@
+@import url(./style.css);
+
+.DropdownItem:hover {
+  background-color: var(--netflix-white);
+  color: var(--netflix-black) !important;
+}

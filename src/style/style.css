@@ -1,0 +1,17 @@
+:root {
+  --netflix-red: #e50914;
+  --netflix-black: #161616;
+  --netflix-white: #ffffff;
+  --netflix-gray: #333333;
+}
+
+.bg-n-primary {
+  background-color: var(--netflix-red);
+}
+
+.bg-n-secondary {
+  background-color: var(--netflix-gray);
+}
+.bg-n-tertiary {
+  background-color: var(--netflix-black);
+}

@@ -1,0 +1,18 @@
+@import url(./style.css);
+
+#searchButton {
+  border: 1px solid var(--netflix-red) !important;
+}
+
+#searchButton:hover {
+  background-color: var(--netflix-red) !important;
+}
+
+#searchInput {
+  background-color: var(--netflix-black);
+  color: var(--netflix-white);
+}
+
+#searchInput::placeholder {
+  color: var(--netflix-white);
+}
