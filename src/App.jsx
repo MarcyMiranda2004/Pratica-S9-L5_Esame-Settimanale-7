@@ -24,8 +24,8 @@ const App = () => {
         <MovieCarouselComponent movie="shrek" />
         
         {/* Extra */}
-        <SettingsComponent />
-        <ProfileComponent />
+        {/* <SettingsComponent />
+        <ProfileComponent /> */}
       </main>
 
       <footer className=' vw-100'>
