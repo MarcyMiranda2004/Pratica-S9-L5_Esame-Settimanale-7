@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-import { Navbar, Nav, Container, Button, Form, Row, Col } from 'react-bootstrap';
+import { Navbar, Nav, Button, Form, Row, Col } from 'react-bootstrap';
 import { BsSearch, BsBellFill, BsPersonCircle } from 'react-icons/bs'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../style/style.css';
 import '../style/Navbar.css';
 import logo from '../assets/logo.png';
+import {Link, useLocation } from 'react-router-dom';
 
 const NavbarComponent = () => {
   const [searchVisible, setSearchVisible] = useState(false); 
+  const location = useLocation();
+  console.log(location);
 
   return (
     <Navbar expand="lg" className='bg-n-tertiary m-0'>
@@ -19,30 +22,35 @@ const NavbarComponent = () => {
         
       <Navbar.Collapse id="navbarSupportedContent">
         <Nav className="me-auto mb-2 mb-lg-0">
+
           <Nav.Item>
-            <Nav.Link href="#" className="fw-bold text-white">
+            <Link to="/" className={`nav-link text-white ${location.pathname === '/' ? 'text-fw-bold active border-bottom border-danger' : ''}`}>
               Home
-            </Nav.Link>
+            </Link>
           </Nav.Item>
+
           <Nav.Item>
-            <Nav.Link href="#" className=" text-white">
+            <Link to="/tvshows" className={`nav-link text-white ${location.pathname === '/tvshows' ? 'text-fw-bold active border-bottom border-danger' : ''}`}>
               TV Shows
-            </Nav.Link>
+            </Link>
           </Nav.Item>
+
           <Nav.Item>
-            <Nav.Link href="#" className=" text-white">
+            <Link to={"/movies"} className={`nav-link text-white ${location.pathname === '/movies' ? 'text-fw-bold active border-bottom border-danger' : ''}`}>
               Movies
-            </Nav.Link>
+            </Link>
           </Nav.Item>
+
           <Nav.Item>
-            <Nav.Link href="#" className=" text-white">
+            <Link to={"/recentlyAdded"} className={`nav-link text-white ${location.pathname === '/recentlyAdded' ? 'text-fw-bold active border-bottom border-danger' : ''}`}>
               Recently Added
-            </Nav.Link>
+            </Link>
           </Nav.Item>
+
           <Nav.Item>
-            <Nav.Link href="#" className=" text-white">
+            <Link to={"/myList"} className={`nav-link text-white ${location.pathname === '/myList' ? 'text-fw-bold active border-bottom border-danger' : ''}`}>
               My List
-            </Nav.Link>
+            </Link>
           </Nav.Item>
         </Nav>
 
@@ -69,18 +77,19 @@ const NavbarComponent = () => {
           <Button 
             variant="link" 
             className="text-white " 
-            onClick={() => setSearchVisible(!searchVisible)} 
-          >
+            onClick={() => setSearchVisible(!searchVisible)} >
             <BsSearch size={20} />
           </Button>
+          
           <div className="fw-bold text-white mx-3">KIDS</div>
-          <Button variant="link" className="text-white">
-            <BsBellFill size={20} />
-          </Button>
-          <Button variant="link" className="text-white">
-            <BsPersonCircle size={20} />
-          </Button>
-        </div>
+            <Button variant="link" className="text-white">
+              <BsBellFill size={20} />
+            </Button>
+
+            <Button variant="link" className="text-white">
+              <BsPersonCircle size={20} />
+            </Button>
+          </div>
       </Navbar.Collapse>
     </Navbar>
   );
