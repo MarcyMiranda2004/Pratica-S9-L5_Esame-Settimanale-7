@@ -12,6 +12,21 @@ const NavbarComponent = () => {
   const location = useLocation();
   console.log(location);
 
+  const getSearchPlaceholder = () => {
+  switch (location.pathname) {
+    case '/tvshows':
+      return 'Cerca una serie TV...';
+    case '/movies':
+      return 'Cerca un film...';
+    case '/recentlyAdded':
+      return 'Cerca tra gli ultimi arrivi...';
+    case '/myList':
+      return 'Cerca nella tua lista...';
+    default:
+      return 'Cerca contenuti...';
+  }
+};
+
   return (
     <Navbar expand="lg" className='bg-n-tertiary m-0'>
       <Navbar.Brand href="#">
@@ -60,9 +75,9 @@ const NavbarComponent = () => {
               <Col xs="auto">
                 <Form.Control
                   type="text"
-                  placeholder="Cerca..."
+                  placeholder={getSearchPlaceholder()}
                   className="mr-sm-2"
-                  id='searchInput'
+                  id="searchInput"
                 />
               </Col>
               <Col xs="auto">
